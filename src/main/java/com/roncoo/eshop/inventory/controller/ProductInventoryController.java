@@ -52,7 +52,8 @@ public class ProductInventoryController {
 		try {
 			Request request = new ProductInventoryDBUpdateRequest(
 					productInventory, productInventoryService);
-			requestAsyncProcessService.process(request);
+			// 上面的request只是初始化逻辑对象，并还没执行，放到下面异步执行
+			requestAsyncProcessService.process(request); // 这一步的作用是把request放到对应的queue中, 就可以被执行了
 			response = new Response(Response.SUCCESS);
 		} catch (Exception e) {
 			e.printStackTrace();

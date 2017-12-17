@@ -6,7 +6,10 @@ package com.roncoo.eshop.inventory.request;
  *
  */
 public interface Request {
-	
+
+	/**
+	 * 处理请求逻辑
+	 */
 	void process();
 	Integer getProductId();
 	
